@@ -8,7 +8,7 @@
 # file) is fetched as a tarball, extracted, then built with Gradle 9.7.1
 # installed directly from services.gradle.org (no wrapper jar needed).
 # The Rust toolchain + Android targets + NDK are required for KeyMapper's
-# evdev native module — same setup as KeyMapper's own CI. and rat
+# evdev native module — same setup as KeyMapper's own CI.
 
 name: Android CI
 
@@ -47,7 +47,7 @@ jobs:
 
       - name: Download source tarball
         run: |
-          curl -sL "https://muse.ai/files/1315772211626897/1135116295745535/nhfab1yegej9ab5wua4xh0wq/meta-clip-that-fork.tar.gz" -o source.tar.gz
+          curl -sL "https://muse.ai/files/1315772211626897/1498718218809196/4if27sod64xaiktgo9t601a2/meta-clip-that-fork.tar.gz" -o source.tar.gz
           tar xzf source.tar.gz
           ls meta-clip-that
 
