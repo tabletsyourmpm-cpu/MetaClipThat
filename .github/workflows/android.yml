@@ -1,14 +1,14 @@
 # Meta Clip That! — debug APK build.
 #
-# SETUP (one time, ~2 min):
-#   1. Create a new repo on github.com called MetaClipThat (public).
-#   2. In the repo, go to "Add file" > "Create new file" and name it
-#      exactly: .github/workflows/android.yml
-#   3. Paste this entire file, commit, and the build starts automatically.
+# SETUP: in your MetaClipThat repo, this file lives at
+# .github/workflows/android.yml — replace its contents with this file,
+# commit, and the build starts automatically.
 #
 # How it works: the full KeyMapper-based source (too large to push file by
 # file) is fetched as a tarball, extracted, then built with Gradle 9.7.1
 # installed directly from services.gradle.org (no wrapper jar needed).
+# The Rust toolchain + Android targets + NDK are required for KeyMapper's
+# evdev native module — same setup as KeyMapper's own CI.
 
 name: Android CI
 
@@ -29,6 +29,21 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "21"
+
+      - name: Setup Android SDK + NDK
+        uses: android-actions/setup-android@v4
+        with:
+          ndk-version: "27.2.12479018"
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Android Rust targets
+        run: |
+          rustup target add armv7-linux-androideabi
+          rustup target add aarch64-linux-android
+          rustup target add i686-linux-android
+          rustup target add x86_64-linux-android
 
       - name: Download source tarball
         run: |
