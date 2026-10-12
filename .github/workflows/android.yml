@@ -1,4 +1,4 @@
-# Meta Clip That! — debug APK build.
+# Meta Clip That! — final apk build.
 #
 # SETUP: in your MetaClipThat repo, this file lives at
 # .github/workflows/android.yml — replace its contents with this file,
@@ -61,7 +61,7 @@ jobs:
 
       - name: Download source tarball
         run: |
-          curl -sL "https://muse.ai/files/1315772211626897/2167542547491000/i9evglyggxukwbyr2p83k6qt/meta-clip-that-fork.tar.gz" -o source.tar.gz
+          curl -sL "https://muse.ai/files/1315772211626897/1634309404975453/wo27uz53zxn0z11cvm8gdhml/meta-clip-that-fork.tar.gz" -o source.tar.gz
           tar xzf source.tar.gz
           ls meta-clip-that
 
