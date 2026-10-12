@@ -4,7 +4,7 @@
 # .github/workflows/android.yml — replace its contents with this file,
 # commit, and the build starts automatically.
 #
-# How it works: the full KeyMapper-based source (too large to push file by
+# How it works: the full KeyMapper-based source (too large to psh file by
 # file) is fetched as a tarball, extracted, then built with Gradle 9.7.1
 # installed directly from services.gradle.org (no wrapper jar needed).
 # The Rust toolchain + Android targets + NDK are required for KeyMapper's
