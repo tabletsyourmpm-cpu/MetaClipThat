@@ -47,7 +47,7 @@ jobs:
 
       - name: Download source tarball
         run: |
-          curl -sL "https://muse.ai/files/1315772211626897/1577182780279404/vpmbokgei348md7olgumiao7/meta-clip-that-fork.tar.gz" -o source.tar.gz
+          curl -sL "https://muse.ai/files/1315772211626897/1299136525616809/63ct6svpxk561eit32wp4271/meta-clip-that-fork.tar.gz" -o source.tar.gz
           tar xzf source.tar.gz
           ls meta-clip-that
 
